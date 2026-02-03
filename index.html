@@ -1,20 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Alani Inventory - Locked</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alani Inventory System</title>
+    <style>
+        /* CSS biar tampilannya Pro buat Perusahaan Alani */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 90%; max-width: 800px; display: none; }
+        h1 { color: #1a73e8; border-bottom: 2px solid #1a73e8; padding-bottom: 10px; }
+        .quote { font-style: italic; color: #555; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f8f9fa; color: #333; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
 </head>
 <body>
+
     <script>
-        // Passwordnya: ALANI2026
-        var pass = prompt("Masukkan Password:");
-        if (pass != "ALANI2026") {
-            alert("Salah!");
-            document.body.innerHTML = "Akses Ditolak";
+        // PASSWORD AKSES RAHASIA LU BRE
+        var password = "ALANI2026"; 
+        
+        var input = prompt("ALANI INVENTORY SYSTEM\nSilakan masukkan kode akses:");
+        
+        if (input === password) {
+            alert("Akses Diterima! Selamat bekerja, bre.");
+            window.onload = function() {
+                document.getElementById('main-content').style.display = 'block';
+            };
+        } else {
+            alert("Password Salah! Akses ditolak.");
+            document.body.innerHTML = "<h2 style='text-align:center; margin-top:100px;'>Akses Dibatasi.<br>Hanya untuk internal Alani.</h2>";
             window.stop();
         }
     </script>
 
-    <h1>Data Stok Alani</h1>
-    <p>Data lu aman di sini bre...</p>
+    <div id="main-content" class="container">
+        <h1>Dashboard Stok Barang Alani</h1>
+        <p class="quote">"Dari Rumah untuk Dunia"</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama Barang</th>
+                    <th>Kategori</th>
+                    <th>Stok</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Putih Telur Alani</td>
+                    <td>Fresh</td>
+                    <td>100 Pcs</td>
+                    <td>Tersedia</td>
+                </tr>
+                <tr>
+                    <td>Cemilan Renyah Balado</td>
+                    <td>Snack</td>
+                    <td>50 Pcs</td>
+                    <td>Tersedia</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p style="margin-top: 20px; font-size: 0.8em; color: gray;">Update Terakhir: 2026</p>
+    </div>
+
 </body>
 </html>
